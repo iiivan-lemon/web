@@ -1,0 +1,17 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="row newq  ">
+    <h4 class="font-italic">Hot questions <a href="{% url "new_questions"  %}" class="hot">New questions</a></h4>
+</div>
+{%for question in hot_questions %}
+    {% include 'include/question.html' %}
+{% endfor%}
+<nav aria-label="Page navigation example">
+                    {% include "include/pagination_hot.html" %}
+</nav>
+{% endblock content%}
+
+
+

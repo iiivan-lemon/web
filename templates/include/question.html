@@ -1,0 +1,54 @@
+{% load static%}
+
+<div class="row question">
+              <div class="col-3 ">
+                <img src="{% static "img/2.jpg" %}">
+                  <div class ="row">
+
+
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <button  onclick="clickplus()" class ="btn btn-outline-dark likee"><h4>↑</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <button  onclick="clickminus()" class = "btn btn-outline-dark likee" ><h4>↓</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <p id = "clicks" class = "btn btn-outline-dark likee" >0</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  </div>
+
+
+              </div>
+              <div class="col-9 ">
+
+
+                <h4><a href="{% url "question" pk=question.id %}" class="greynav-link">
+                  {{question.title}}
+                  </a>
+                </h4>
+                  {{question.text}}
+                <ol class="list-unstyled mb-0">
+
+                  <li><a href="#" >answer(2)</a></li>
+                </ol>
+                <ul class="nav justify-content">
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tags: </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  href="#">C++</a>
+                  </li>
+                </ul>
+
+
+
+              </div>
+
+
+            </div>

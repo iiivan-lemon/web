@@ -1,0 +1,263 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <link href="/home/ivan_lemon/Desktop/web/askme/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/home/ivan_lemon/Desktop/web/askme/static/css/my.css" rel="stylesheet">
+  </head>
+
+  
+  <body class = "bodygrey">
+<script defer>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4481610-59', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+<header class="py-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="indexlogin.html" class="nav-link  text-secondary logo"><h3>🍋 ASK Ivan-Lemon 🍋</h3></a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 " >
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search" >
+        </form>
+
+        <div class="col-5 d-flex justify-content-end align-items-center">
+          <div class="text-end">
+              <button type="button" class="btn btn-success" onclick="window.location.href = 'ask.html';">ASK!</button>
+         
+              <!--<button type="button" class="btn btn-outline-light" onclick="window.location.href = 'login.html';">Login</button>-->
+         
+            
+             <!-- <button type="button" class="btn btn-lemon" onclick="window.location.href = 'signup.html';">Sign-up</button>-->
+            
+            <img src="/home/ivan_lemon/Desktop/web/askme/static/img/2.jpg" alt="mdo" width="38" height="38" class="rounded">
+
+        
+          </div>
+          <a href="#" class="link-secondary px-2 nav-link" onclick="window.location.href = '#';">settings</a>
+          <a href="index.html" class="link-secondary px-2 nav-link" onclick="window.location.href = '#';">log out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+
+    <!-- Begin page content -->
+    <main role="main" class="container space">
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <div class="row newq  ">
+                <h4 class="font-italic" >New questions <a href="#" class = "hot">Hot questions</a></h4>
+            </div>
+
+            <div class="row question">
+              <div class="col-3 ">
+                <img src="/home/ivan_lemon/Desktop/web/static/unnamed.png">
+                  <div class ="row">
+                  
+                  
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <button  onclick="clickplus()" class ="btn btn-outline-dark likee"><h4>↑</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <button  onclick="clickminus()" class = "btn btn-outline-dark likee" ><h4>↓</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <p id = "clicks" class = "btn btn-outline-dark likee" >0</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  </div>
+                  
+                  
+              </div>
+              <div class="col-9 ">
+                <h4><a href="question.html"  class="greynav-link">QUESTION 1</a></h4>
+
+                  
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                
+                <ol class="list-unstyled mb-0">
+                  
+                  <li><a href="#" >answer(2)</a></li>
+                </ol>
+                <ul class="nav justify-content">
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tags: </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  href="#">C++</a>
+                  </li>
+                </ul>
+                
+
+
+              </div>
+              
+            </div>
+
+            <div class="row question">
+              <div class="col-3">
+                  <img src="/home/ivan_lemon/Desktop/web/static/unnamed.png">
+                  
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <button  onclick="clickplus1()" class ="btn btn-outline-dark likee"><h4>↑</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <button  onclick="clickminus1()" class = "btn btn-outline-dark likee" ><h4>↓</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <p id = "clicks1" class = "btn btn-outline-dark likee" >0</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-9">
+                <h4><a href="#" class="greynav-link" >QUESTION 2</a></h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <ol class="list-unstyled mb-0">
+                  <li><a href="#" >answer(2)</a></li>
+                </ol>
+                <ul class="nav justify-content">
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tags: </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">SQL</a>
+                  </li>
+                </ul>
+              </ol>
+              </div>
+              
+            </div>
+            <div class="row question">
+              <div class="col-3">
+                  <img src="/home/ivan_lemon/Desktop/web/static/unnamed.png">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <button  onclick="clickplus2()" class ="btn btn-outline-dark likee"><h4>↑</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <button  onclick="clickminus2()" class = "btn btn-outline-dark likee" ><h4>↓</h4></button>
+                      </div>
+                      <div class="col-sm-3">
+                        <p id = "clicks2" class = "btn btn-outline-dark likee" >0</p>
+                      </div>
+                    </div>
+                  
+              </div>
+              <div class="col-9">
+                <h4><a href="#"  class="greynav-link">QUESTION 3</a></h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <ol class="list-unstyled mb-0">
+                  <li><a href="#" >answer(2)</a></li>
+                </ol>
+                <ul class="nav justify-content">
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tags: </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">SQL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  href="#">Python</a>
+                  </li>
+                </ul>
+                
+              </div>
+              
+            </div>
+            
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+              
+            
+
+
+          </div>
+          <div class="col-4 tags ">
+            <div class = "row tag"><h4 class="font-italic">Popular Tags</h4>
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Python</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">SQL</a>
+                  </li>
+                  <li class="nav-item"><a class="nav-link" href="#">Mail.ru</a></li>
+                  <li><a class="nav-link" href="#">SQL</a></li>
+                  <li><a class="nav-link" href="#">Google</a></li>
+                  <li><a class="nav-link" href="#">Python</a></li>
+                  <li><a class="nav-link" href="#">C++</a></li>
+                  <li><a class="nav-link" href="#">Technopark</a></li>
+                </ul>
+            </div>
+            <div class = "row tag"><h4 class="font-italic">Best members</h4>
+              <ul class="list-unstyled mb-0">
+                <li style="margin-bottom: 5px;"><a href="#">Peter</a></li>
+                <li style="margin-bottom: 5px;"><a href="#">Mark</a></li>
+                <li style="margin-bottom: 5px;"><a href="#">Maria</a></li>
+                <li style="margin-bottom: 5px;"><a href="#">C++</a></li>
+              </ol>
+            </div>
+          </div>
+      </div>
+    </main>
+
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="{% static "js/my.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>>
+  </body>
+</html>

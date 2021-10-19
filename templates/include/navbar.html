@@ -1,0 +1,40 @@
+<header class="py-3 bg-dark text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="indexlogin.html" class="nav-link  text-secondary logo"><h3>🍋 ASK Ivan-Lemon 🍋</h3></a>
+                </li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ">
+                <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+            </form>
+
+            <div class="col-5 d-flex justify-content-end align-items-center">
+                <div class="text-end">
+                    {% block navbar%}
+                    <button type="button" class="btn btn-success" onclick="window.location.href = '{% url "ask"  %}';">ASK!
+                    </button>
+
+                    <button type="button" class="btn btn-outline-light" onclick="window.location.href = 'login.html';">
+                        Login
+                    </button>
+
+
+                    <button type="button" class="btn btn-lemon" onclick="window.location.href = 'signup.html';">
+                        Sign-up
+                    </button>
+
+                    <!--<img src="/home/ivan_lemon/Desktop/web/static/unnamed.png" alt="mdo" width="38" height="38" class="rounded">-->
+                    {% endblock navbar%}
+
+                </div>
+                <a href="#" class="link-secondary px-2 nav-link"
+                   onclick="window.location.href = 'log.html';">settings</a>
+                <!-- <a href="#" class="link-secondary px-2 nav-link" onclick="window.location.href = 'log.html';">log out</a>-->
+            </div>
+        </div>
+    </div>
+</header>

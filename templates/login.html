@@ -1,0 +1,58 @@
+{% extends "include/base.html" %}
+{% load static %}
+
+
+
+
+
+{% block navbar%}
+<button type="button" class="btn btn-success" onclick="window.location.href = '{% url "ask" %}';">ASK!</button>
+
+<button type="button" class="btn btn-lemon" onclick="window.location.href = '{% url "signup" %}';">Sign-up</button>
+
+<!--<img src="/home/ivan_lemon/Desktop/web/static/unnamed.png" alt="mdo" width="38" height="38" class="rounded">-->
+{% endblock navbar%}
+
+
+
+            {% block content%}
+            <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Log In</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="mb-3 row">
+                <label for="inputLogin" class="col-sm-2 col-form-label">Login</label>
+                <div class="col-sm-10">
+                  <input type="Login" class="form-control" id="inputLogin" placeholder="my_login">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword" placeholder="*********">
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-success btn-lg" type="submit">Log in!</button>
+        </form>
+
+      </div>
+          {% endblock content%}
+
+
