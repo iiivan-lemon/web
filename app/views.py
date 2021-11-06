@@ -1,37 +1,13 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
-questions = [
-    {
-        'id': idx,
-        'title': f'QUESTION {idx}',
-        'text': f'Lorem ipsum dolor sit amet, consectetur adipisicing elit  tempor incididunt ut labore et dolore '
-                f'magna aliqua. Ut enim ad minim veniam, '
-                f'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'
-                f'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse'
-                f'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
-                f'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    } for idx in range(5)
-]
-hot_questions = [
-    {
-        'id': idx,
-        'title': f'QUESTION {idx}',
-        'text': f'Lorem ipsum dolor sit amet, consectetur adipisicing elit  tempor incididunt ut labore et dolore '
-                f'magna aliqua. Ut enim ad minim veniam, '
-                f'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'
-                f'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse'
-                f'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'
-                f'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    } for idx in range(3)
-]
+from app.models import Question, Answer, Tags
 
 
 def index(request):
-    user_list = questions
+    q_list = Question.objects.new_questions()
+    t_list = Tags.objects.all().select_related()
     page = request.GET.get('page', 1)
-
-    paginator = Paginator(user_list, 2)
+    paginator = Paginator(q_list, 3)
     try:
         q = paginator.page(page)
     except PageNotAnInteger:
@@ -39,36 +15,58 @@ def index(request):
     except EmptyPage:
         q = paginator.page(paginator.num_pages)
 
-    return render(request, 'index.html', {'questions': q})
+    return render(request, 'index.html', {'questions': q, 'tags': t_list})
 
 
 def ask(request):
-    return render(request, 'ask.html', {})
+    t_list = Tags.objects.all().select_related()
+    return render(request, 'ask.html', {'tags': t_list})
 
 
 def login(request):
-    return render(request, 'login.html', {})
+    t_list = Tags.objects.all().select_related()
+    return render(request, 'login.html', {'tags': t_list})
 
 
 def signup(request):
-    return render(request, 'signup.html', {})
+    t_list = Tags.objects.all().select_related()
+    return render(request, 'signup.html', {'tags': t_list})
 
 
 def one_question(request, pk):
-    question = questions[pk]
-    return render(request, 'question.html', {"question": question})
+    question = Question.objects.get(id=pk)
+    t_list = Tags.objects.all().select_related()
+    a_list = Answer.objects.all().select_related()
+
+    return render(request, 'question.html', {"question": question, 'tags': t_list, "answers": a_list})
 
 
 def hot(request):
-    user_list = hot_questions
+    q_list = Question.objects.hot_questions()
+    t_list = Tags.objects.all().select_related()
     page = request.GET.get('page', 1)
-
-    paginator = Paginator(user_list, 2)
+    paginator = Paginator(q_list, 3)
     try:
-        hot_q = paginator.page(page)
+        q = paginator.page(page)
     except PageNotAnInteger:
-        hot_q = paginator.page(1)
+        q = paginator.page(1)
     except EmptyPage:
-        hot_q = paginator.page(paginator.num_pages)
+        q = paginator.page(paginator.num_pages)
 
-    return render(request, 'hot_questions.html', {'hot_questions': hot_q})
+    return render(request, 'hot_questions.html', {'questions': q, 'tags': t_list})
+
+
+def tag(request, title):
+    t_list = Tags.objects.all().select_related()
+    q_list = Question.objects.questions_by_tag(title)
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(q_list, 3)
+    try:
+        q = paginator.page(page)
+    except PageNotAnInteger:
+        q = paginator.page(1)
+    except EmptyPage:
+        q = paginator.page(paginator.num_pages)
+
+    return render(request, 'tag_questions.html', {'questions': q, 'tags': t_list, 'title': title})

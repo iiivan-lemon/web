@@ -215,18 +215,9 @@
                 {% block side %}
                 <div class="row tag"><h4 class="font-italic">Popular Tags</h4>
                     <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Python</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">SQL</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Mail.ru</a></li>
-                        <li><a class="nav-link" href="#">SQL</a></li>
-                        <li><a class="nav-link" href="#">Google</a></li>
-                        <li><a class="nav-link" href="#">Python</a></li>
-                        <li><a class="nav-link" href="#">C++</a></li>
-                        <li><a class="nav-link" href="#">Technopark</a></li>
+                        {% for tag in tags%}
+                        <li><a class="nav-link" href="{% url "tag" title=tag.title %}">{{tag.title}}</a></li>
+                        {% endfor%}
                     </ul>
                 </div>
                 <div class="row tag"><h4 class="font-italic">Best members</h4>

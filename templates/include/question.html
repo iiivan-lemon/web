@@ -15,7 +15,7 @@
                         <button  onclick="clickminus()" class = "btn btn-outline-dark likee" ><h4>↓</h4></button>
                       </div>
                       <div class="col-sm-3">
-                        <p id = "clicks" class = "btn btn-outline-dark likee" >0</p>
+                        <p id = "clicks" class = "btn btn-outline-dark likee" >{{question.votes}}</p>
                       </div>
                     </div>
                   </div>
@@ -26,13 +26,13 @@
 
               </div>
               <div class="col-9 ">
-
-
                 <h4><a href="{% url "question" pk=question.id %}" class="greynav-link">
                   {{question.title}}
                   </a>
                 </h4>
-                  {{question.text}}
+                <div class>
+                  {{question.description}}
+                  </div>
                 <ol class="list-unstyled mb-0">
 
                   <li><a href="#" >answer(2)</a></li>
@@ -42,7 +42,9 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Tags: </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link"  href="#">C++</a>
+                    {%for tag in question.tags.all %}
+                    <li><a class="nav-link" href="{% url "tag" title=tag.title %}">{{ tag.title }}</a></li>
+                    {% endfor %}
                   </li>
                 </ul>
 
