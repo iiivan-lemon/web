@@ -7,7 +7,7 @@
     <h4 class="font-italic">New questions <a href="{% url "hot_questions" %}" class="hot">Hot questions</a></h4>
 </div>
 
-{%for question in questions %}
+{%for question in page_obj %}
     {% include 'include/question.html' %}
 {% endfor %}
 

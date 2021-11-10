@@ -5,7 +5,7 @@
 <div class="row newq  ">
     <h4 class="font-italic">Hot questions <a href="{% url "new_questions"  %}" class="hot">New questions</a></h4>
 </div>
-{%for question in questions %}
+{%for question in page_obj %}
     {% include 'include/question.html' %}
 {% endfor%}
 <nav aria-label="Page navigation example">

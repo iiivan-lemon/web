@@ -4,13 +4,15 @@
                 {% block content %}
                     {% include 'include/question.html' %}
                 <hr class="my-4">
-                {%for answer in answers %}
+                {%for answer in page_obj %}
                 {% if answer.question.id == question.id %}
                 {% include 'include/answer.html' %}
-                {%endif%}
+                {% endif %}
                 {% endfor %}
 
-
+                <nav aria-label="Page navigation example">
+                    {% include "include/pagination.html" %}
+                </nav>
 
                 <hr class="my-4">
                 <form class="needs-validation" novalidate="">

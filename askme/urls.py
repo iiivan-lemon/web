@@ -26,6 +26,7 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('hot_questions/', views.hot, name="hot_questions"),
     path('tag/<str:title>/', views.tag, name="tag"),
+    path('settings', views.set, name="set"),
     path('', views.index, name="new_questions"),
 
 ]
